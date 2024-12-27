@@ -8,15 +8,13 @@
 <div class="container">
   {% for service in logs %}
   {% set btncolor = 'btn-success' if service.active == 'Active' else 'btn-secondary' %}
-  <p>
-  <button class="btn {{ btncolor }} btn-block" type="button" data-toggle="collapse" data-target="#{{ service.name|replace('.','') }}" aria-expanded="false" aria-controls="{{ service.name|replace('.','') }}">
+  <p> <button class="btn {{ btncolor }} btn-block" type="button" data-toggle="collapse" data-target="#{{ service.name|replace('.','') }}" aria-expanded="false" aria-controls="{{ service.name|replace('.','') }}">
     {{ service.name }} : {{ service.active }}
-  </button>
-</p>
+  </button></p>
   <div class="collapse" id="{{ service.name|replace('.','') }}">
     <div class="card card-body">
-  <h4>STATUS: </h4> <p>{{ service.sysctl_status|safe }} </p>
-  <h4>JOURNAL: </h4><p> {{ service.journalctl|safe }} </p>
+  <h4>状态：</h4> <p>{{ service.sysctl_status|safe }} </p>
+  <h4>日志:</h4><p> {{ service.journalctl|safe }} </p>
     </div>
   </div>
 {% endfor %}

@@ -1,10 +1,10 @@
 {% from 'bootstrap4/nav.html' import render_nav_item %}
 <!doctype html>
-<html lang="en" style="position:relative; min-height: 100%;">
+<html lang="zh-CN" style="position:relative; min-height: 100%;">
   <head>
     {% block head %}
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {% block styles %}
@@ -18,9 +18,9 @@
   <body style="min-height: 100vh; display:flex; flex-direction: column;">
     <div class="container">
       <ul class="nav nav-pills nav-justified bg-light font-weight-bolder text-uppercase">
-        <li class="nav-item">{{ render_nav_item('status_page', 'Status') }}</li>
-        <li class="nav-item">{{ render_nav_item('settings_page', 'Settings') }}</li>
-        <li class="nav-item">{{ render_nav_item('logs_page', 'Logs') }}</li>
+        <li class="nav-item">{{ render_nav_item('status_page', '状态') }}</li>
+        <li class="nav-item">{{ render_nav_item('settings_page', '设置') }}</li>
+        <li class="nav-item">{{ render_nav_item('logs_page', '日志') }}</li>
       </ul>
     </div>
     <!-- Your page content -->

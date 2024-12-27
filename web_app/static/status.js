@@ -79,14 +79,12 @@ $(document).ready(function () {
     // ####################### MAP ####################################################
 
 
-    var map = L.map('map').setView({lon: 0, lat: 0}, 2);
+    var map = L.map('map').setView({ lon: 85.5796347500042, lat: 44.825357128804 }, 15);
 
-    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        maxZoom: 21,
-        maxNativeZoom: 20,
-        attribution: '&copy; <a href="https://openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a> ' +
-            '| &copy; <a href="https://hot.openstreetmap.org" target="_blank">Humanitarian OpenStreetMap Team</a> ' ,
-        tileSize: 256,      
+    var esriLayer = L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 21,  // Increase maxZoom to 21
+        maxNativeZoom: 17,
+        attribution: 'Tiles © Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
     var osm2Layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -96,15 +94,9 @@ $(document).ready(function () {
         tileSize: 256,      
     });
 
-    var orthoHrLayer = L.tileLayer('https://wms.openstreetmap.fr/tms/1.0.0/tous_fr/{z}/{x}/{y} ', {
-        maxZoom: 21,
-        attribution: '<a href="https://wiki.openstreetmap.org/wiki/FR:Serveurs/wms.openstreetmap.fr" target="_blank">Ortho HR</a> ' + 
-            '| &copy; <a href="https://geoservices.ign.fr/documentation/diffusion/documentation-offre.html#bdortho_orthohr target="_blank">IGN</a> ',
-        tileSize: 256,       
-    });
 
-    if (maptiler_key.length > 0) {
-    var aerialLayer = L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=' + maptiler_key,{
+    var maptiler_key = "VOdCpRtK23gauUEBIgvx";
+    var aerialLayer = L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=' + maptiler_key, {
         tileSize: 512,
         zoomOffset: -1,
         minZoom: 1,
@@ -112,20 +104,18 @@ $(document).ready(function () {
         maxNativeZoom: 20,
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
         crossOrigin: true
-      });
-    };
+    });
     
     var baseMaps = {
-        "OpenStreetMap (Hot)": osmLayer,
+        "Esri World Imagery": esriLayer,
         "OpenStreetMap (Osm)": osm2Layer,
-        "Ortho HR (France)": orthoHrLayer
     };
 
     if (typeof(aerialLayer) !== 'undefined') {
         baseMaps["Aerial_Hybrid"] = aerialLayer;
     };
     L.control.layers(baseMaps).addTo(map);
-    osm2Layer.addTo(map);
+    esriLayer.addTo(map);
     
     // Add Base station crosshair
     var crossIcon = L.icon({
@@ -139,7 +129,7 @@ $(document).ready(function () {
     var baseMark = L.marker(baseCoordinates, {icon: crossIcon, zIndexOffset: 0}).addTo(map);
     baseMark.bindTooltip("Base registered location", {offset : L.point({x: 20, y: 0})});
     // Add realtime localisation marker
-    var locMark = L.marker({lng: 0, lat: 0}).addTo(map);
+    var locMark = L.marker({ lon: 0, lat: 0 }).addTo(map);
     locMark.bindTooltip("Base realtime location without correction \n (PPP, itrf@now)");
 
     // Move map view with markers bounds

@@ -39,6 +39,12 @@ def send_nmea_command(port, speed, timeout, nmea_command, verbose):
                     response = ser.readline().decode('ascii', errors='ignore').strip()
                     # Process only valid ASCII responses
                     if response and response.startswith('$'):
+                        # Ignore specific response "$PAIR012*39"
+                        if response == "$PAIR012*39":
+                            if verbose:
+                                print(f"Ignored response: {response}")
+                            continue
+                        
                         if verbose:
                             print(f"Received response: {response}")
                         return response

@@ -11,7 +11,7 @@
         
         <thead>
           <tr>
-            <th data-field="name" data-sortable="true">File name</th>
+            <th data-field="name" data-sortable="true">文件名称</th>
             <th data-field="format" data-sortable="true">type</th>
             <th data-field="size" data-sortable="true">size (MB)</th>
             <th data-field="actions" data-formatter="actionFormatter" data-events="operateEvents">actions</th>
@@ -28,21 +28,17 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Warning</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">注意</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
         
         <!-- Modal body -->
-        <div class="modal-body text-center ">
-          Do you really want to delete this file ?
-          <p id="filename" class="font-weight-bold"></p>
+        <div class="modal-body text-center ">你真的要删除这个文件？<p id="filename" class="font-weight-bold"></p>
         </div>
         
         <!-- Modal footer -->
-        <div class="modal-footer mx-auto">
-          <button id="confirm-delete-button" type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        </div>
+        <div class="modal-footer mx-auto"> <button id="confirm-delete-button" type="button" class="btn btn-danger" data-dismiss="modal">删除</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button> </div>
         
       </div>
     </div>
@@ -55,8 +51,8 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Convert raw file archive (zip) to rinex file</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">将RAW文件存档（ ZIP ）转换为rinex文件</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
         
          <!-- Modal body -->
@@ -74,18 +70,18 @@
                 <div class="col-8">
                   <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active text-left" id="detail-rinex-ign" role="tabpanel" aria-labelledby="list-rinex-ign">
-                      <ul><li>Rinex v2.11</li><li>GPS only</li><li>L1/L2</li><li>Time interval: 30 seconds</li><li>preset for <a href="http://rgp.ign.fr/SERVICES/calcul_online.php" target="_blank">Ign</a> service</li></ul>
+                      <ul><li>版本 2.11</li><li>仅GPS</li><li>L1/L2</li><li>时间间隔： 30秒</li><li>preset for <a href="http://rgp.ign.fr/SERVICES/calcul_online.php" target="_blank">Ign</a> service</li></ul>
                     </div>
                     <div class="tab-pane fade text-left" id="detail-rinex-nrcan" role="tabpanel" aria-labelledby="list-rinex-nrcan">
-                      <ul><li>Rinex v3.04</li><li>GPS + Glonass</li><li>L1/L2</li><li>Time interval: 30 seconds</li><li>preset for <a href="https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php" target="_blank">Nrcan</a> service</li></ul>
+                      <ul><li> 版本 3.04</li><li>GPS + Glonass</li><li>L1/L2</li><li>时间间隔： 30秒</li><li>preset for <a href="https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php" target="_blank">Nrcan</a> service</li></ul>
                     </div>
                     <div class="tab-pane fade text-left" id="detail-rinex-full_30s" role="tabpanel" aria-labelledby="list-rinex-full_30s">
-                      <ul><li>Rinex v3.04</li><li>All supported GNSS constellations</li><li>All supported frequencies</li><li>Time interval: 30 seconds</li></ul>
+                      <ul><li> 版本 3.04</li><li>所有受支持的GNSS星座</li><li>所有支持的频率</li><li>时间间隔： 30秒</li></ul>
                     </div>
                     <div class="tab-pane fade text-left" id="detail-rinex-full_1s" role="tabpanel" aria-labelledby="list-rinex-full_1s">
-                      <ul><li>Rinex v3.04</li><li>All supported GNSS constellations</li><li>All supported frequencies</li><li>Time interval: 1 second</li></ul>
+                      <ul><li> 版本 3.04</li><li>所有受支持的GNSS星座</li><li>所有支持的频率</li><li>时间间隔： 1秒</li></ul>
                     </div>
-                    <div><button type="button" id="create-rinex-button" class="btn btn-primary">Create Rinex file</button></div>
+                    <div><button type="button" id="create-rinex-button" class="btn btn-primary">创建Rinex文件</button></div>
 
                   </div>
                 </div>
@@ -95,10 +91,7 @@
         </div>
         
         <!-- Modal footer -->
-        <div class="modal-footer mx-auto">
-          <button id="edit-button" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          
-        </div>
+        <div class="modal-footer mx-auto"><button id="edit-button" type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button></div>
         
       </div>
     </div>

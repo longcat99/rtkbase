@@ -11,12 +11,12 @@
 <div id="bar-chart"></div>
 
 <div class="row">
-    <div class="col py-3 border bg-light"><b>Latitude: </b><span id="lat_value"></span></div>
-    <div class="col py-3 border bg-light"><b>Longitude: </b><span id="lon_value"></span></div>
-    <div class="col py-3 border bg-light"><b>Height: </b><span id="height_value"></span></div>
+    <div class="col py-3 border bg-light"><b>纬度： </b><span id="lat_value"></span></div>
+    <div class="col py-3 border bg-light"><b>经度： </b><span id="lon_value"></span></div>
+    <div class="col py-3 border bg-light"><b>高度： </b><span id="height_value"></span></div>
     <div class="col-auto py-3 border bg-light"><span id="solution_status"></span></div>
     <div class="col-auto py-3 border bg-light" id="clipboard_cell" ><img class="mx-auto align-baseline" src="../static/images/paste-solid-svgrepo-com.svg" 
-      title="copy coordinates to clipboard" alt="clipboard"></div>
+      title="将坐标复制到剪贴板" alt="剪贴板"></div>
 </div>
 
 <div id="map" style="height: 420px; margin-top: 2em; margin-bottom: 2em;">    
@@ -27,17 +27,15 @@
       <div class="modal-content">     
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Coordinates sent to clipboard</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">坐标已发送到剪贴板</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
         </div>       
         <!-- Modal body -->
         <div class="modal-body">
             <input id="dummy_input" class="form-control" type="text">   
         </div>       
         <!-- Modal footer -->
-        <div class="modal-footer mx-auto">
-          <button id="start-update-button" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>      
+        <div class="modal-footer mx-auto"><button id="start-update-button" type="button" class="btn btn-primary" data-dismiss="modal">关闭</button></div>      
       </div>
     </div>
   </div>
@@ -48,16 +46,14 @@
         <!-- Modal Header -->
         <div class="modal-header">
           <!--<h4 class="modal-title">Coordinates sent to clipboard</h4>-->
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">×</button>
         </div>       
         <!-- Modal body -->
         <div class="modal-body text-center">
-            <p>Main service is off or malfunctioning. Nothing could be displayed here.</p>  
+            <p>主服务已关闭或出现故障。 此处不能显示任何内容。</p>  
         </div>       
         <!-- Modal footer -->
-        <div class="modal-footer mx-auto">
-          <button id="start-update-button" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>      
+        <div class="modal-footer mx-auto"><button id="start-update-button" type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button></div>      
       </div>
     </div>
   </div>
